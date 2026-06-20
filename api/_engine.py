@@ -235,8 +235,10 @@ def simulate(N, scenario, assets, state, seed=778899):
         l = np.where(w == home, away, home)
         winner_of[k["num"]] = w; loser_of[k["num"]] = l
         if k["round"] != "3P":
-            # meeting log carries the winner so we can answer "if they meet, who wins?"
-            meetings.append((k["round"], k.get("venue"), home, away, w))
+            # meeting log carries match identity (num/venue/date) + the winner
+            meetings.append(
+                (k["round"], k["num"], k.get("venue"), k.get("date"), home, away, w)
+            )
             entry = round_rank[k["round"]]
             for arr in (home, away):
                 np.maximum.at(furthest, (np.arange(N), arr), entry)
@@ -383,19 +385,29 @@ def aggregate(sim, team_a=None, team_b=None):
         by_round = {}
         total = np.zeros(N, dtype=bool)
         a_wins = 0  # times A wins the meeting (across all rounds)
-        for rnd, venue, home, away, w in sim["meetings"]:
+        for rnd, num, venue, date, home, away, w in sim["meetings"]:
             hit = ((home == ia) & (away == ib)) | ((home == ib) & (away == ia))
             if not hit.any():
                 continue
             total |= hit
             a_wins += int(((w == ia) & hit).sum())
-            slot = by_round.setdefault(rnd, {"prob": 0.0, "venues": {}})
-            slot["prob"] += float(hit.mean())
-            if venue:
-                slot["venues"][venue] = slot["venues"].get(venue, 0.0) + float(hit.mean())
+            p = float(hit.mean())
+            slot = by_round.setdefault(rnd, {"prob": 0.0, "matches": {}})
+            slot["prob"] += p
+            # break the round down by the specific match (num/venue/date)
+            m = slot["matches"].setdefault(
+                num, {"num": num, "venue": venue, "date": date, "prob": 0.0}
+            )
+            m["prob"] += p
         for slot in by_round.values():
             slot["prob"] = round(slot["prob"], 5)
-            slot["venues"] = {v: round(p, 5) for v, p in slot["venues"].items()}
+            slot["matches"] = sorted(
+                (
+                    {**m, "prob": round(m["prob"], 5)}
+                    for m in slot["matches"].values()
+                ),
+                key=lambda m: -m["prob"],
+            )
         meet_count = int(total.sum())
         p_meet = float(total.mean())
         # 95% Monte Carlo margin for the headline number (binomial standard error)
@@ -439,7 +451,7 @@ def _leaderboards(sim, T):
     finals = _top_pairs(_pair_counts(fh, fa, T), names, sim["N"], 8) if fh is not None else []
     # most likely meetings anywhere (each pair meets at most once per sim)
     anywhere = np.zeros(T * T)
-    for _rnd, _venue, home, away, _w in sim["meetings"]:
+    for _rnd, _num, _venue, _date, home, away, _w in sim["meetings"]:
         anywhere += _pair_counts(home, away, T)
     meetings = _top_pairs(anywhere, names, sim["N"], 12)
     return {"finals": finals, "meetAnywhere": meetings}

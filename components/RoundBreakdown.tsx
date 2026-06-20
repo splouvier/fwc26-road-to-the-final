@@ -3,6 +3,14 @@
 import { pct } from "@/lib/api";
 import { ROUND_ORDER, ROUND_LABEL, type PairResult } from "@/lib/types";
 
+function fmtDate(iso: string | null) {
+  if (!iso) return "";
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+}
+
 export default function RoundBreakdown({
   pair,
   accentA,
@@ -29,13 +37,15 @@ export default function RoundBreakdown({
       <div className="space-y-3">
         {rounds.map((r) => {
           const m = pair.byRound[r];
-          const venue = Object.entries(m.venues).sort((a, b) => b[1] - a[1])[0];
+          const top = m.matches[0]; // most likely match in this round
           return (
             <div key={r}>
               <div className="flex items-baseline gap-3 text-sm">
                 <span className="display text-ink whitespace-nowrap">{ROUND_LABEL[r]}</span>
                 <span className="flex-1 min-w-0 truncate text-faint text-xs text-right">
-                  {venue ? venue[0] : ""}
+                  {top?.venue}
+                  {top?.date && ` · ${fmtDate(top.date)}`}
+                  {top?.num ? ` · M${top.num}` : ""}
                 </span>
                 <span className="tnum text-ink font-semibold whitespace-nowrap">{pct(m.prob, 2)}</span>
               </div>

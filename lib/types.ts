@@ -17,9 +17,16 @@ export type TeamStats = {
   reachByRound: ReachByRound;
 };
 
+export type MeetingMatch = {
+  num: number;
+  venue: string;
+  date: string | null;
+  prob: number;
+};
+
 export type RoundMeeting = {
   prob: number;
-  venues: Record<string, number>;
+  matches: MeetingMatch[];
 };
 
 export type PairResult = {

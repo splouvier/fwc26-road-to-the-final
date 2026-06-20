@@ -4,12 +4,28 @@ import AnimatedNumber from "./AnimatedNumber";
 import { meta } from "@/lib/teams";
 import { ROUND_LABEL, type PairResult } from "@/lib/types";
 
+function fmtDate(iso: string | null | undefined) {
+  if (!iso) return "";
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+  });
+}
+
 function mostLikely(pair: PairResult) {
-  let best: { round: string; venue: string; prob: number } | null = null;
+  let best:
+    | { round: string; venue: string; date: string | null; num: number; prob: number }
+    | null = null;
   for (const [round, m] of Object.entries(pair.byRound)) {
-    const topVenue = Object.entries(m.venues).sort((a, b) => b[1] - a[1])[0];
+    const top = m.matches[0]; // already sorted by probability
     if (!best || m.prob > best.prob) {
-      best = { round, venue: topVenue?.[0] ?? "", prob: m.prob };
+      best = {
+        round,
+        venue: top?.venue ?? "",
+        date: top?.date ?? null,
+        num: top?.num ?? 0,
+        prob: m.prob,
+      };
     }
   }
   return best;
@@ -70,7 +86,13 @@ export default function ResultHero({
                   at <span className="text-ink font-semibold">{best.venue}</span>
                 </>
               )}
-              .
+              {best.date && (
+                <>
+                  {" "}
+                  on <span className="text-ink font-semibold">{fmtDate(best.date)}</span>
+                </>
+              )}
+              {best.num > 0 && <span className="text-faint"> (Match {best.num})</span>}.
             </>
           )}
         </div>
