@@ -2,7 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { meta, GROUP_LETTERS, GROUPS } from "@/lib/teams";
-import { scheduleByDate, matchInstant, prettySlot, type SMatch } from "@/lib/schedule";
+import {
+  scheduleByDate,
+  matchInstant,
+  prettySlot,
+  HOST_COUNTRIES,
+  type SMatch,
+} from "@/lib/schedule";
 
 type Filter = "all" | "group" | "ko";
 
@@ -21,6 +27,7 @@ function fmtDate(iso: string) {
 export default function ScheduleView({ teamA, teamB }: { teamA: string; teamB: string }) {
   const [filter, setFilter] = useState<Filter>("all");
   const [country, setCountry] = useState<string>("");
+  const [host, setHost] = useState<string>("");
   const [showPast, setShowPast] = useState(false);
   const [today, setToday] = useState<string>("");
   useEffect(() => {
@@ -45,6 +52,7 @@ export default function ScheduleView({ teamA, teamB }: { teamA: string; teamB: s
         if (filter === "group" && m.isKnockout) return false;
         if (filter === "ko" && !m.isKnockout) return false;
         if (country && m.team1 !== country && m.team2 !== country) return false;
+        if (host && m.hostCountry !== host) return false;
         return true;
       }),
     }))
@@ -92,6 +100,26 @@ export default function ScheduleView({ teamA, teamB }: { teamA: string; teamB: s
                   </option>
                 ))}
               </optgroup>
+            ))}
+          </select>
+        </label>
+
+        {/* host country */}
+        <label className="glass rounded-full pl-3 pr-2 py-1 flex items-center gap-1.5 text-xs cursor-pointer">
+          <span className="eyebrow text-[9px] text-faint">Host</span>
+          <select
+            value={host}
+            onChange={(e) => setHost(e.target.value)}
+            className="bg-transparent text-ink display text-xs outline-none cursor-pointer"
+            aria-label="Filter by host country"
+          >
+            <option value="" style={{ color: "#000" }}>
+              All
+            </option>
+            {HOST_COUNTRIES.map((h) => (
+              <option key={h.name} value={h.name} style={{ color: "#000" }}>
+                {h.flag} {h.name}
+              </option>
             ))}
           </select>
         </label>

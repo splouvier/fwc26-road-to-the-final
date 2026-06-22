@@ -1,6 +1,24 @@
 import snapshot from "@/data/wc2026_snapshot.json";
 import { TEAMS } from "./teams";
 
+// 2026 is co-hosted; map each venue city to its host nation.
+const CANADA_VENUES = new Set(["Toronto", "Vancouver"]);
+const MEXICO_VENUES = new Set([
+  "Mexico City",
+  "Guadalajara (Zapopan)",
+  "Monterrey (Guadalupe)",
+]);
+export const HOST_COUNTRIES = [
+  { name: "United States", flag: "🇺🇸" },
+  { name: "Canada", flag: "🇨🇦" },
+  { name: "Mexico", flag: "🇲🇽" },
+];
+export function hostCountryOf(venue: string): string {
+  if (CANADA_VENUES.has(venue)) return "Canada";
+  if (MEXICO_VENUES.has(venue)) return "Mexico";
+  return "United States";
+}
+
 export type SMatch = {
   num: number; // FIFA match number (canonical order); knockout feeders reference these
   date: string;
@@ -8,6 +26,7 @@ export type SMatch = {
   roundLabel: string; // "Group B" or "Round of 16" etc.
   isKnockout: boolean;
   venue: string;
+  hostCountry: string;
   team1: string;
   team2: string;
   team1Real: boolean; // true if a resolved team (has flag), false if a slot placeholder
@@ -85,6 +104,7 @@ export function getSchedule(): SMatch[] {
         roundLabel,
         isKnockout: isKo,
         venue: m.ground ?? "",
+        hostCountry: hostCountryOf(m.ground ?? ""),
         team1: m.team1,
         team2: m.team2,
         team1Real: !!TEAMS[m.team1],
