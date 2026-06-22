@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 export type ViewKey =
   | "simulate"
   | "bracket"
+  | "predict"
   | "leaders"
   | "schedule"
   | "standings"
@@ -14,6 +15,7 @@ export type ViewKey =
 const VIEWS: { key: ViewKey; label: string }[] = [
   { key: "simulate", label: "Simulate" },
   { key: "bracket", label: "Bracket" },
+  { key: "predict", label: "Predict" },
   { key: "leaders", label: "Leaders" },
   { key: "schedule", label: "Schedule" },
   { key: "standings", label: "Standings" },

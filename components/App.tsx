@@ -11,6 +11,7 @@ import ScenarioPanel, { type Choice, fxKey } from "@/components/ScenarioPanel";
 import SensitivityPanel from "@/components/SensitivityPanel";
 import StandingsView from "@/components/StandingsView";
 import BracketView from "@/components/BracketView";
+import BracketBuilderView from "@/components/BracketBuilderView";
 import LeadersView from "@/components/LeadersView";
 import ScheduleView from "@/components/ScheduleView";
 import AwardsView from "@/components/AwardsView";
@@ -68,6 +69,7 @@ export default function App({ initialData }: { initialData?: SimResponse }) {
     const views: ViewKey[] = [
       "simulate",
       "bracket",
+      "predict",
       "leaders",
       "schedule",
       "standings",
@@ -300,6 +302,9 @@ export default function App({ initialData }: { initialData?: SimResponse }) {
                 )}
               </div>
             )}
+
+            {view === "predict" &&
+              (data ? <BracketBuilderView data={data} /> : <LoadingHero />)}
 
             {view === "leaders" &&
               (data ? <LeadersView data={data} onPickPair={pickPair} /> : <LoadingHero />)}

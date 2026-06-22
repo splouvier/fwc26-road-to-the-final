@@ -1,7 +1,8 @@
 import bracketData from "@/data/bracket.json";
+import { GROUPS } from "./teams";
 import type { TeamStats } from "./types";
 
-type Slot =
+export type Slot =
   | { type: "group_1st"; group: string }
   | { type: "group_2nd"; group: string }
   | { type: "group_3rd"; groups: string[] }
@@ -120,3 +121,51 @@ export function planPaths(
 }
 
 export { KO };
+export const matchByNum = (num: number) => BY_NUM.get(num);
+export const feedsInto = (num: number) => PARENT.get(num);
+export const FINAL_NUM = KO.find((m) => m.round === "F")?.num ?? 104;
+export const KO_ROUNDS = ["R32", "R16", "QF", "SF", "F"] as const;
+
+export type Seed = Record<number, { home: string; away: string }>;
+
+/**
+ * Project the 32-team Round of 32 field from the model: each group's most likely
+ * winner / runner-up / qualifying third, with best thirds greedily slotted into
+ * the third-place slots. A starting point the user can freely edit.
+ */
+export function seedR32(teams: Record<string, TeamStats>): Seed {
+  const first: Record<string, string> = {};
+  const second: Record<string, string> = {};
+  const third: Record<string, string> = {};
+  for (const g of Object.keys(GROUPS)) {
+    const members = GROUPS[g].filter((n) => teams[n]);
+    if (members.length < 3) continue;
+    first[g] = [...members].sort((a, b) => teams[b].groupWin - teams[a].groupWin)[0];
+    second[g] = members
+      .filter((n) => n !== first[g])
+      .sort((a, b) => teams[b].runnerUp - teams[a].runnerUp)[0];
+    third[g] = members
+      .filter((n) => n !== first[g] && n !== second[g])
+      .sort((a, b) => teams[b].reachR32 - teams[a].reachR32)[0];
+  }
+  const usedThird = new Set<string>();
+  const pickThird = (groups: string[]) => {
+    const cand = groups
+      .map((g) => third[g])
+      .filter((n) => n && !usedThird.has(n))
+      .sort((a, b) => teams[b].reachR32 - teams[a].reachR32)[0];
+    if (cand) usedThird.add(cand);
+    return cand;
+  };
+  const resolve = (s: Slot): string => {
+    if (s.type === "group_1st") return first[s.group] ?? `Winner ${s.group}`;
+    if (s.type === "group_2nd") return second[s.group] ?? `Runner-up ${s.group}`;
+    if (s.type === "group_3rd") return pickThird(s.groups) ?? "3rd place";
+    return "";
+  };
+  const seed: Seed = {};
+  for (const m of KO) {
+    if (m.round === "R32") seed[m.num] = { home: resolve(m.home), away: resolve(m.away) };
+  }
+  return seed;
+}
