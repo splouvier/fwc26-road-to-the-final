@@ -36,7 +36,7 @@ export default function ViewSwitcher({
   }, [view]);
   return (
     <div
-      className="glass rounded-full p-1 flex w-full max-w-3xl mx-auto gap-0.5 overflow-x-auto no-scrollbar justify-start lg:justify-center"
+      className="glass rounded-full p-1 flex w-full max-w-3xl mx-auto gap-0.5 overflow-x-auto md:overflow-visible no-scrollbar"
       role="tablist"
     >
       {VIEWS.map((v) => {
@@ -48,7 +48,8 @@ export default function ViewSwitcher({
             role="tab"
             aria-selected={active}
             onClick={() => onChange(v.key)}
-            className={`shrink-0 display text-xs sm:text-sm rounded-full py-2 px-3 whitespace-nowrap transition-all ${
+            // flex-1 + min-w-max: natural width (scrolls) on mobile, even fill on desktop
+            className={`flex-1 min-w-max md:min-w-0 text-center display text-xs sm:text-sm rounded-full py-2 px-3 whitespace-nowrap transition-all ${
               active ? "text-ink" : "text-faint hover:text-mute"
             }`}
             style={
