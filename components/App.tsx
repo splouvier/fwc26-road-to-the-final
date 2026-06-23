@@ -319,6 +319,14 @@ export default function App({ initialData }: { initialData?: SimResponse }) {
             {view === "about" && <AboutView data={data} />}
           </motion.div>
         </AnimatePresence>
+
+        <footer className="mt-14 pt-6 border-t border-line text-center text-[11px] text-faint leading-relaxed">
+          Built by <span className="text-mute">Sylvain Plouvier</span>
+          <span className="mx-1.5 opacity-50">·</span>
+          Illustrative modelled estimates, not predictions
+          <span className="mx-1.5 opacity-50">·</span>
+          Not affiliated with FIFA
+        </footer>
       </main>
     </div>
   );
