@@ -2951,6 +2951,252 @@
           "reachR16": 0.0
         }
       }
+    },
+    {
+      "date": "2026-07-01",
+      "asOf": "2026-06-30",
+      "teams": {
+        "Algeria": {
+          "title": 0.00446,
+          "groupWin": 0.0,
+          "reachR16": 0.345
+        },
+        "Argentina": {
+          "title": 0.11096,
+          "groupWin": 1.0,
+          "reachR16": 0.81746
+        },
+        "Australia": {
+          "title": 0.01242,
+          "groupWin": 0.0,
+          "reachR16": 0.49921
+        },
+        "Austria": {
+          "title": 0.012,
+          "groupWin": 0.0,
+          "reachR16": 0.36296
+        },
+        "Belgium": {
+          "title": 0.03879,
+          "groupWin": 1.0,
+          "reachR16": 0.655
+        },
+        "Bosnia & Herzegovina": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Brazil": {
+          "title": 0.11308,
+          "groupWin": 1.0,
+          "reachR16": 1.0
+        },
+        "Canada": {
+          "title": 0.04529,
+          "groupWin": 0.0,
+          "reachR16": 1.0
+        },
+        "Cape Verde": {
+          "title": 0.00117,
+          "groupWin": 0.0,
+          "reachR16": 0.18254
+        },
+        "Colombia": {
+          "title": 0.028,
+          "groupWin": 1.0,
+          "reachR16": 0.62038
+        },
+        "Croatia": {
+          "title": 0.02571,
+          "groupWin": 0.0,
+          "reachR16": 0.45038
+        },
+        "Cura\u00e7ao": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Czech Republic": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "DR Congo": {
+          "title": 0.00204,
+          "groupWin": 0.0,
+          "reachR16": 0.2415
+        },
+        "Ecuador": {
+          "title": 0.01617,
+          "groupWin": 0.0,
+          "reachR16": 0.44029
+        },
+        "Egypt": {
+          "title": 0.01121,
+          "groupWin": 0.0,
+          "reachR16": 0.50079
+        },
+        "England": {
+          "title": 0.07671,
+          "groupWin": 1.0,
+          "reachR16": 0.7585
+        },
+        "France": {
+          "title": 0.13962,
+          "groupWin": 1.0,
+          "reachR16": 1.0
+        },
+        "Germany": {
+          "title": 0.0,
+          "groupWin": 1.0,
+          "reachR16": 0.0
+        },
+        "Ghana": {
+          "title": 0.00475,
+          "groupWin": 0.0,
+          "reachR16": 0.37962
+        },
+        "Haiti": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Iran": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Iraq": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Ivory Coast": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Japan": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Jordan": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Mexico": {
+          "title": 0.03037,
+          "groupWin": 1.0,
+          "reachR16": 0.55971
+        },
+        "Morocco": {
+          "title": 0.054,
+          "groupWin": 0.0,
+          "reachR16": 1.0
+        },
+        "Netherlands": {
+          "title": 0.0,
+          "groupWin": 1.0,
+          "reachR16": 0.0
+        },
+        "New Zealand": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Norway": {
+          "title": 0.03071,
+          "groupWin": 0.0,
+          "reachR16": 1.0
+        },
+        "Panama": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Paraguay": {
+          "title": 0.01404,
+          "groupWin": 0.0,
+          "reachR16": 1.0
+        },
+        "Portugal": {
+          "title": 0.04679,
+          "groupWin": 0.0,
+          "reachR16": 0.54963
+        },
+        "Qatar": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Saudi Arabia": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Scotland": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Senegal": {
+          "title": 0.02354,
+          "groupWin": 0.0,
+          "reachR16": 0.47437
+        },
+        "South Africa": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "South Korea": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Spain": {
+          "title": 0.06467,
+          "groupWin": 1.0,
+          "reachR16": 0.63704
+        },
+        "Sweden": {
+          "title": 0.01292,
+          "groupWin": 0.0,
+          "reachR16": 0.397
+        },
+        "Switzerland": {
+          "title": 0.04771,
+          "groupWin": 1.0,
+          "reachR16": 0.603
+        },
+        "Tunisia": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Turkey": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "USA": {
+          "title": 0.03288,
+          "groupWin": 1.0,
+          "reachR16": 0.52563
+        },
+        "Uruguay": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        },
+        "Uzbekistan": {
+          "title": 0.0,
+          "groupWin": 0.0,
+          "reachR16": 0.0
+        }
+      }
     }
   ]
 }
