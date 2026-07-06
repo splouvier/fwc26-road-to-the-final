@@ -4192,7 +4192,7 @@
           "reachR16": 0.0
         },
         "Argentina": {
-          "title": 0.12942,
+          "title": 0.12117,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4207,7 +4207,7 @@
           "reachR16": 0.0
         },
         "Belgium": {
-          "title": 0.05179,
+          "title": 0.05167,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4232,7 +4232,7 @@
           "reachR16": 0.0
         },
         "Colombia": {
-          "title": 0.03887,
+          "title": 0.03796,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4262,17 +4262,17 @@
           "reachR16": 0.0
         },
         "Egypt": {
-          "title": 0.01808,
+          "title": 0.01625,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
         "England": {
-          "title": 0.10608,
+          "title": 0.18183,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
         "France": {
-          "title": 0.18138,
+          "title": 0.18075,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4317,12 +4317,12 @@
           "reachR16": 0.0
         },
         "Mexico": {
-          "title": 0.04996,
+          "title": 0.0,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
         "Morocco": {
-          "title": 0.08625,
+          "title": 0.08375,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -4337,7 +4337,7 @@
           "reachR16": 0.0
         },
         "Norway": {
-          "title": 0.06638,
+          "title": 0.05763,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -4352,7 +4352,7 @@
           "reachR16": 1.0
         },
         "Portugal": {
-          "title": 0.06904,
+          "title": 0.06742,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -4387,7 +4387,7 @@
           "reachR16": 0.0
         },
         "Spain": {
-          "title": 0.08833,
+          "title": 0.08937,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4397,7 +4397,7 @@
           "reachR16": 0.0
         },
         "Switzerland": {
-          "title": 0.0685,
+          "title": 0.06533,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4412,7 +4412,7 @@
           "reachR16": 0.0
         },
         "USA": {
-          "title": 0.04592,
+          "title": 0.04688,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
