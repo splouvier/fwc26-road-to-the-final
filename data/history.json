@@ -4430,7 +4430,7 @@
     },
     {
       "date": "2026-07-07",
-      "asOf": "2026-07-06",
+      "asOf": "2026-07-07",
       "teams": {
         "Algeria": {
           "title": 0.0,
@@ -4438,7 +4438,7 @@
           "reachR16": 0.0
         },
         "Argentina": {
-          "title": 0.12296,
+          "title": 0.18142,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4453,7 +4453,7 @@
           "reachR16": 0.0
         },
         "Belgium": {
-          "title": 0.09733,
+          "title": 0.09517,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4478,7 +4478,7 @@
           "reachR16": 0.0
         },
         "Colombia": {
-          "title": 0.03771,
+          "title": 0.03233,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4508,17 +4508,17 @@
           "reachR16": 0.0
         },
         "Egypt": {
-          "title": 0.0155,
+          "title": 0.0,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
         "England": {
-          "title": 0.17608,
+          "title": 0.16742,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
         "France": {
-          "title": 0.17688,
+          "title": 0.16971,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4568,7 +4568,7 @@
           "reachR16": 1.0
         },
         "Morocco": {
-          "title": 0.08429,
+          "title": 0.07762,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -4583,7 +4583,7 @@
           "reachR16": 0.0
         },
         "Norway": {
-          "title": 0.06258,
+          "title": 0.05692,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -4633,7 +4633,7 @@
           "reachR16": 0.0
         },
         "Spain": {
-          "title": 0.16437,
+          "title": 0.16321,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -4643,7 +4643,7 @@
           "reachR16": 0.0
         },
         "Switzerland": {
-          "title": 0.06229,
+          "title": 0.05621,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
