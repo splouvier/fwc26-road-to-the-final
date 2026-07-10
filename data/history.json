@@ -5168,7 +5168,7 @@
     },
     {
       "date": "2026-07-10",
-      "asOf": "2026-07-09",
+      "asOf": "2026-07-10",
       "teams": {
         "Algeria": {
           "title": 0.0,
@@ -5176,7 +5176,7 @@
           "reachR16": 0.0
         },
         "Argentina": {
-          "title": 0.16596,
+          "title": 0.16125,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -5191,7 +5191,7 @@
           "reachR16": 0.0
         },
         "Belgium": {
-          "title": 0.09079,
+          "title": 0.0,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -5251,12 +5251,12 @@
           "reachR16": 1.0
         },
         "England": {
-          "title": 0.15667,
+          "title": 0.15496,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
         "France": {
-          "title": 0.28887,
+          "title": 0.27746,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -5321,7 +5321,7 @@
           "reachR16": 0.0
         },
         "Norway": {
-          "title": 0.05254,
+          "title": 0.04908,
           "groupWin": 0.0,
           "reachR16": 1.0
         },
@@ -5371,7 +5371,7 @@
           "reachR16": 0.0
         },
         "Spain": {
-          "title": 0.14933,
+          "title": 0.26054,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -5381,7 +5381,7 @@
           "reachR16": 0.0
         },
         "Switzerland": {
-          "title": 0.09583,
+          "title": 0.09671,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
