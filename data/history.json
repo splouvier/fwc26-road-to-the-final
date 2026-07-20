@@ -7628,7 +7628,7 @@
     },
     {
       "date": "2026-07-20",
-      "asOf": "2026-07-18",
+      "asOf": "2026-07-19",
       "teams": {
         "Algeria": {
           "title": 0.0,
@@ -7636,7 +7636,7 @@
           "reachR16": 0.0
         },
         "Argentina": {
-          "title": 0.50054,
+          "title": 0.0,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
@@ -7831,7 +7831,7 @@
           "reachR16": 0.0
         },
         "Spain": {
-          "title": 0.49946,
+          "title": 1.0,
           "groupWin": 1.0,
           "reachR16": 1.0
         },
